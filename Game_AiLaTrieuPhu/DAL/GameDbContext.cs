@@ -12,8 +12,8 @@ namespace Game_AiLaTrieuPhu.DAL
     {
         public GameDbContext() { }
         public GameDbContext(DbContextOptions options) : base(options) { }
-        DbSet<Question> Questions { get; set; }
-        DbSet<User> Users { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
