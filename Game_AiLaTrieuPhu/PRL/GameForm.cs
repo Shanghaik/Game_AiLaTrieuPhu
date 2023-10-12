@@ -17,6 +17,9 @@ namespace Game_AiLaTrieuPhu.PRL
             InitializeComponent();
         }
 
-        
+        private void btn_Start_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -36,6 +36,7 @@
             this.btn_A = new System.Windows.Forms.Button();
             this.tbt_Question = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_Start = new System.Windows.Forms.Button();
             this.btn_1 = new System.Windows.Forms.Button();
             this.btn_2 = new System.Windows.Forms.Button();
             this.btn_3 = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.ptb_Pro = new System.Windows.Forms.PictureBox();
             this.ptb_Viewer = new System.Windows.Forms.PictureBox();
             this.ptb_5050 = new System.Windows.Forms.PictureBox();
-            this.btn_Start = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -159,6 +159,17 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Danh sách 15 câu hỏi và các mức thưởng";
+            // 
+            // btn_Start
+            // 
+            this.btn_Start.Font = new System.Drawing.Font("Segoe UI Historic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Start.Location = new System.Drawing.Point(41, 616);
+            this.btn_Start.Name = "btn_Start";
+            this.btn_Start.Size = new System.Drawing.Size(261, 44);
+            this.btn_Start.TabIndex = 20;
+            this.btn_Start.Text = "Bắt đầu chơi";
+            this.btn_Start.UseVisualStyleBackColor = true;
+            this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
             // btn_1
             // 
@@ -346,7 +357,7 @@
             this.lb_Money.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lb_Money.Location = new System.Drawing.Point(422, 199);
             this.lb_Money.Name = "lb_Money";
-            this.lb_Money.Size = new System.Drawing.Size(128, 46);
+            this.lb_Money.Size = new System.Drawing.Size(128, 45);
             this.lb_Money.TabIndex = 5;
             this.lb_Money.Text = "000000";
             // 
@@ -356,7 +367,7 @@
             this.lb_Time.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lb_Time.Location = new System.Drawing.Point(25, 199);
             this.lb_Time.Name = "lb_Time";
-            this.lb_Time.Size = new System.Drawing.Size(56, 46);
+            this.lb_Time.Size = new System.Drawing.Size(56, 45);
             this.lb_Time.TabIndex = 4;
             this.lb_Time.Text = "30";
             // 
@@ -399,16 +410,6 @@
             this.ptb_5050.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_5050.TabIndex = 0;
             this.ptb_5050.TabStop = false;
-            // 
-            // btn_Start
-            // 
-            this.btn_Start.Font = new System.Drawing.Font("Segoe UI Historic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Start.Location = new System.Drawing.Point(41, 616);
-            this.btn_Start.Name = "btn_Start";
-            this.btn_Start.Size = new System.Drawing.Size(261, 44);
-            this.btn_Start.TabIndex = 20;
-            this.btn_Start.Text = "Bắt đầu chơi";
-            this.btn_Start.UseVisualStyleBackColor = true;
             // 
             // GameForm
             // 
