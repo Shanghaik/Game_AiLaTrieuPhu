@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_E = new System.Windows.Forms.Button();
+            this.btn_D = new System.Windows.Forms.Button();
             this.btn_C = new System.Windows.Forms.Button();
-            this.bt_B = new System.Windows.Forms.Button();
+            this.btn_B = new System.Windows.Forms.Button();
             this.btn_A = new System.Windows.Forms.Button();
             this.tbt_Question = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -70,9 +70,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_E);
+            this.groupBox1.Controls.Add(this.btn_D);
             this.groupBox1.Controls.Add(this.btn_C);
-            this.groupBox1.Controls.Add(this.bt_B);
+            this.groupBox1.Controls.Add(this.btn_B);
             this.groupBox1.Controls.Add(this.btn_A);
             this.groupBox1.Controls.Add(this.tbt_Question);
             this.groupBox1.Location = new System.Drawing.Point(12, 315);
@@ -82,15 +82,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Câu hỏi - và các đáp án";
             // 
-            // btn_E
+            // btn_D
             // 
-            this.btn_E.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btn_E.Location = new System.Drawing.Point(392, 269);
-            this.btn_E.Name = "btn_E";
-            this.btn_E.Size = new System.Drawing.Size(329, 79);
-            this.btn_E.TabIndex = 4;
-            this.btn_E.Text = "D";
-            this.btn_E.UseVisualStyleBackColor = false;
+            this.btn_D.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_D.Location = new System.Drawing.Point(392, 269);
+            this.btn_D.Name = "btn_D";
+            this.btn_D.Size = new System.Drawing.Size(329, 79);
+            this.btn_D.TabIndex = 4;
+            this.btn_D.Text = "D";
+            this.btn_D.UseVisualStyleBackColor = false;
             // 
             // btn_C
             // 
@@ -102,15 +102,15 @@
             this.btn_C.Text = "C";
             this.btn_C.UseVisualStyleBackColor = false;
             // 
-            // bt_B
+            // btn_B
             // 
-            this.bt_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.bt_B.Location = new System.Drawing.Point(392, 172);
-            this.bt_B.Name = "bt_B";
-            this.bt_B.Size = new System.Drawing.Size(329, 79);
-            this.bt_B.TabIndex = 2;
-            this.bt_B.Text = "B";
-            this.bt_B.UseVisualStyleBackColor = false;
+            this.btn_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_B.Location = new System.Drawing.Point(392, 172);
+            this.btn_B.Name = "btn_B";
+            this.btn_B.Size = new System.Drawing.Size(329, 79);
+            this.btn_B.TabIndex = 2;
+            this.btn_B.Text = "B";
+            this.btn_B.UseVisualStyleBackColor = false;
             // 
             // btn_A
             // 
@@ -440,9 +440,9 @@
         private TextBox tbt_Question;
         private GroupBox groupBox2;
         private GroupBox groupBox3;
-        private Button btn_E;
+        private Button btn_D;
         private Button btn_C;
-        private Button bt_B;
+        private Button btn_B;
         private Button btn_A;
         private Button btn_1;
         private Button btn_2;
