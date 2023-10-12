@@ -74,10 +74,33 @@ namespace Game_AiLaTrieuPhu.PRL
 
         private void ptb_5050_Click(object sender, EventArgs e)
         {
-
+            string trueAnswer = services.GetTrueAnswer(selectedID);
+            Random r = new Random();
+            int hold = r.Next(1,3);
+            if (trueAnswer == "A")
+            {
+                if (hold == 1) { btn_C.Text = ""; btn_D.Text = ""; }
+                else if (hold == 2) { btn_B.Text = ""; btn_D.Text = ""; }
+                else { btn_C.Text = ""; btn_B.Text = ""; }
+            }else if (trueAnswer == "B")
+            {
+                if (hold == 1) { btn_C.Text = ""; btn_D.Text = ""; }
+                else if (hold == 2) { btn_A.Text = ""; btn_D.Text = ""; }
+                else { btn_C.Text = ""; btn_A.Text = ""; }
+            }else if (trueAnswer == "C")
+            {
+                if (hold == 1) { btn_B.Text = ""; btn_D.Text = ""; }
+                else if (hold == 2) { btn_A.Text = ""; btn_D.Text = ""; }
+                else { btn_A.Text = ""; btn_B.Text = ""; }
+            }else 
+            {
+                if (hold == 1) { btn_C.Text = ""; btn_B.Text = ""; }
+                else if (hold == 2) { btn_A.Text = ""; btn_C.Text = ""; }
+                else { btn_A.Text = ""; btn_B.Text = ""; }
+            }
         }
 
-        private void ptb_Viewer_Click(object sender, EventArgs e)
+        private void ptb_Viewer_Click(object sender, EventArgs e) //Khán giả
         {
             // Thao túng tỉ lệ để xác xuất thua là nhỏ khi chọn hỗ trợ từ khán giả
             // Biết đáp án đúng
@@ -98,7 +121,8 @@ namespace Game_AiLaTrieuPhu.PRL
 
         private void ptb_Pro_Click(object sender, EventArgs e)
         {
-
+            string trueAnswer = services.GetTrueAnswer(selectedID);
+            MessageBox.Show("Chuyên gia khuyên bạn nên chọn đáp án: " + trueAnswer);
         }
 
         private void ptb_Change_Click(object sender, EventArgs e)
