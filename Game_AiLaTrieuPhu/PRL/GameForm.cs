@@ -18,6 +18,7 @@ namespace Game_AiLaTrieuPhu.PRL
         // tạo 1 biến dạng List<int> toàn cục để lưu lại danh sách Id những câu hỏi đã dc chọn
         List<int> selectedQuestions = new List<int>();
         int selectedID;
+        // Mảng question Money chứa tiền thưởng ứng với từng mốc câu hỏi
         int[] questionMoney = new int[15] { 1000000, 2000000, 3000000, 5000000, 10000000, 15000000, 23000000, 40000000, 
             60000000, 100000000, 150000000, 250000000, 400000000, 600000000, 999999999 };
         int selectedIndex = 0;
