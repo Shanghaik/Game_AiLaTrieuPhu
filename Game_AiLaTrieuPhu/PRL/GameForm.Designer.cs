@@ -92,6 +92,7 @@
             this.btn_D.TabIndex = 4;
             this.btn_D.Text = "D";
             this.btn_D.UseVisualStyleBackColor = false;
+            this.btn_D.Click += new System.EventHandler(this.btn_D_Click);
             // 
             // btn_C
             // 
@@ -103,6 +104,7 @@
             this.btn_C.TabIndex = 3;
             this.btn_C.Text = "C";
             this.btn_C.UseVisualStyleBackColor = false;
+            this.btn_C.Click += new System.EventHandler(this.btn_C_Click);
             // 
             // btn_B
             // 
@@ -114,6 +116,7 @@
             this.btn_B.TabIndex = 2;
             this.btn_B.Text = "B";
             this.btn_B.UseVisualStyleBackColor = false;
+            this.btn_B.Click += new System.EventHandler(this.btn_B_Click);
             // 
             // btn_A
             // 
@@ -125,6 +128,7 @@
             this.btn_A.TabIndex = 1;
             this.btn_A.Text = "A";
             this.btn_A.UseVisualStyleBackColor = false;
+            this.btn_A.Click += new System.EventHandler(this.btn_A_Click);
             // 
             // tbt_Question
             // 
@@ -385,6 +389,7 @@
             this.ptb_Change.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_Change.TabIndex = 3;
             this.ptb_Change.TabStop = false;
+            this.ptb_Change.Click += new System.EventHandler(this.ptb_Change_Click);
             // 
             // ptb_Pro
             // 
@@ -395,6 +400,7 @@
             this.ptb_Pro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_Pro.TabIndex = 2;
             this.ptb_Pro.TabStop = false;
+            this.ptb_Pro.Click += new System.EventHandler(this.ptb_Pro_Click);
             // 
             // ptb_Viewer
             // 
@@ -405,6 +411,7 @@
             this.ptb_Viewer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_Viewer.TabIndex = 1;
             this.ptb_Viewer.TabStop = false;
+            this.ptb_Viewer.Click += new System.EventHandler(this.ptb_Viewer_Click);
             // 
             // ptb_5050
             // 
@@ -415,6 +422,7 @@
             this.ptb_5050.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ptb_5050.TabIndex = 0;
             this.ptb_5050.TabStop = false;
+            this.ptb_5050.Click += new System.EventHandler(this.ptb_5050_Click);
             // 
             // GameForm
             // 

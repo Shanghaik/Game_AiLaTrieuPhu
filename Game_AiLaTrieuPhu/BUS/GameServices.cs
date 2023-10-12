@@ -36,5 +36,10 @@ namespace Game_AiLaTrieuPhu.BUS
             var question = repos.GetAllQuestion().FirstOrDefault(p => p.Id == questionID);
             return question.TrueAnswer == answer;
         }
+        // Trả về đáp án đúng
+        public string GetTrueAnswer(int questionID)
+        {
+            return repos.GetAllQuestion().FirstOrDefault(p => p.Id == questionID).TrueAnswer;
+        }
     }
 }
