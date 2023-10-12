@@ -13,7 +13,10 @@ namespace Game_AiLaTrieuPhu.PRL
 {
     public partial class GameForm : Form
     {
+
         GameServices services = new GameServices();
+        // tạo 1 biến dạng List<int> toàn cục để lưu lại danh sách Id những câu hỏi đã dc chọn
+        List<int> selectedQuestions = new List<int>();
         public GameForm()
         {
             InitializeComponent();
@@ -21,13 +24,22 @@ namespace Game_AiLaTrieuPhu.PRL
 
         private void btn_Start_Click(object sender, EventArgs e)
         {
-            var question = services.RandomQuestion(1);
-            tbt_Question.Text = question.QuestionText;
-            btn_A.Text = question.AnswerA;
-            btn_B.Text = question.AnswerA;
-            btn_C.Text = question.AnswerA;
-            btn_D.Text = question.AnswerA;
-
+            while(selectedQuestions.Count< services.CountQuestionLevel(1))
+            {
+                var question = services.RandomQuestion(1);
+                // Nếu câu hỏi random được chọn có id không nằm trong danh sách đã dc chọn
+                if (!selectedQuestions.Contains(question.Id))
+                {
+                    tbt_Question.Text = question.QuestionText;
+                    btn_A.Text = question.AnswerA;
+                    btn_B.Text = question.AnswerB;
+                    btn_C.Text = question.AnswerC;
+                    btn_D.Text = question.AnswerD;
+                    selectedQuestions.Add(question.Id);
+                    break;
+                }
+                else continue;
+            }
         }
     }
 }

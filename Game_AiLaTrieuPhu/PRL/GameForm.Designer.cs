@@ -85,6 +85,7 @@
             // btn_D
             // 
             this.btn_D.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_D.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_D.Location = new System.Drawing.Point(392, 269);
             this.btn_D.Name = "btn_D";
             this.btn_D.Size = new System.Drawing.Size(329, 79);
@@ -95,6 +96,7 @@
             // btn_C
             // 
             this.btn_C.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_C.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_C.Location = new System.Drawing.Point(17, 257);
             this.btn_C.Name = "btn_C";
             this.btn_C.Size = new System.Drawing.Size(329, 79);
@@ -105,6 +107,7 @@
             // btn_B
             // 
             this.btn_B.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_B.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_B.Location = new System.Drawing.Point(392, 172);
             this.btn_B.Name = "btn_B";
             this.btn_B.Size = new System.Drawing.Size(329, 79);
@@ -115,6 +118,7 @@
             // btn_A
             // 
             this.btn_A.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btn_A.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_A.Location = new System.Drawing.Point(17, 172);
             this.btn_A.Name = "btn_A";
             this.btn_A.Size = new System.Drawing.Size(329, 79);
@@ -126,6 +130,7 @@
             // 
             this.tbt_Question.BackColor = System.Drawing.Color.SpringGreen;
             this.tbt_Question.Enabled = false;
+            this.tbt_Question.Font = new System.Drawing.Font("Segoe UI Emoji", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tbt_Question.HideSelection = false;
             this.tbt_Question.Location = new System.Drawing.Point(17, 41);
             this.tbt_Question.Multiline = true;

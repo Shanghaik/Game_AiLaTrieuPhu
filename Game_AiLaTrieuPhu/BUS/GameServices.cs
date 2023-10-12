@@ -26,6 +26,15 @@ namespace Game_AiLaTrieuPhu.BUS
             int index = r.Next(questionLv.Count); // Random trong khoảng số lượng câu hỏi của lv
             return questionLv[index];
         }
+        public int CountQuestionLevel(int level)
+        {
+            return repos.GetAllQuestion().Where(p => p.Level == level).Count();
+        }
         // 2. Check xem câu hỏi đã đúng hay chưa
+        public bool CheckTrueAnswer(int questionID, string answer)
+        {
+            var question = repos.GetAllQuestion().FirstOrDefault(p => p.Id == questionID);
+            return question.TrueAnswer == answer;
+        }
     }
 }
