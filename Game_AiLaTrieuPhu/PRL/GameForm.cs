@@ -18,12 +18,21 @@ namespace Game_AiLaTrieuPhu.PRL
         // tạo 1 biến dạng List<int> toàn cục để lưu lại danh sách Id những câu hỏi đã dc chọn
         List<int> selectedQuestions = new List<int>();
         int selectedID;
+        int[] questionMoney = new int[15] { 1000000, 2000000, 3000000, 5000000, 10000000, 15000000, 23000000, 40000000, 
+            60000000, 100000000, 150000000, 250000000, 400000000, 600000000, 999999999 };
+        int selectedIndex = 0;
         public GameForm()
         {
             InitializeComponent();
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
+        {
+            btn_1.BackColor = Color.LightBlue; // Đổi màu cột mốc đầu tiên
+            btn_Start.Enabled = false; // Disable nút này để tránh người ta nhấn nhiều lần
+            RandomQuestionShow();
+        }
+        public void RandomQuestionShow()
         {
             while (selectedQuestions.Count < services.CountQuestionLevel(1))
             {
@@ -49,50 +58,65 @@ namespace Game_AiLaTrieuPhu.PRL
             if (services.CheckTrueAnswer(selectedID, answer))
             {
                 MessageBox.Show("Đúng");
+                // Update tiền thắng
+                lb_Money.Text = questionMoney[selectedIndex].ToString();
+                selectedIndex++; // Update vị trí câu hỏi
+                RandomQuestionShow(); // Khi đúng thì ta load thêm câu hỏi mới
             }
-            else MessageBox.Show("Sai");
+            else { 
+                MessageBox.Show("Sai, bạn ra về với số tiền là " + lb_Money.Text);
+                grb_Cauhoi.Enabled = false;
+                return; 
+            }
         }
         private void btn_A_Click(object sender, EventArgs e)
         {
             CheckTrue("A");
+
         }
 
         private void btn_B_Click(object sender, EventArgs e)
         {
             CheckTrue("B");
+
         }
 
         private void btn_C_Click(object sender, EventArgs e)
         {
             CheckTrue("C");
+
         }
 
         private void btn_D_Click(object sender, EventArgs e)
         {
             CheckTrue("D");
+
         }
 
         private void ptb_5050_Click(object sender, EventArgs e)
         {
             string trueAnswer = services.GetTrueAnswer(selectedID);
             Random r = new Random();
-            int hold = r.Next(1,3);
+            int hold = r.Next(1, 3);
             if (trueAnswer == "A")
             {
                 if (hold == 1) { btn_C.Text = ""; btn_D.Text = ""; }
                 else if (hold == 2) { btn_B.Text = ""; btn_D.Text = ""; }
                 else { btn_C.Text = ""; btn_B.Text = ""; }
-            }else if (trueAnswer == "B")
+            }
+            else if (trueAnswer == "B")
             {
                 if (hold == 1) { btn_C.Text = ""; btn_D.Text = ""; }
                 else if (hold == 2) { btn_A.Text = ""; btn_D.Text = ""; }
                 else { btn_C.Text = ""; btn_A.Text = ""; }
-            }else if (trueAnswer == "C")
+            }
+            else if (trueAnswer == "C")
             {
                 if (hold == 1) { btn_B.Text = ""; btn_D.Text = ""; }
                 else if (hold == 2) { btn_A.Text = ""; btn_D.Text = ""; }
                 else { btn_A.Text = ""; btn_B.Text = ""; }
-            }else 
+            }
+            else
             {
                 if (hold == 1) { btn_C.Text = ""; btn_B.Text = ""; }
                 else if (hold == 2) { btn_A.Text = ""; btn_C.Text = ""; }

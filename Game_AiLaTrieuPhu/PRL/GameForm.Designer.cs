@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grb_Cauhoi = new System.Windows.Forms.GroupBox();
             this.btn_D = new System.Windows.Forms.Button();
             this.btn_C = new System.Windows.Forms.Button();
             this.btn_B = new System.Windows.Forms.Button();
             this.btn_A = new System.Windows.Forms.Button();
             this.tbt_Question = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grb_Moc = new System.Windows.Forms.GroupBox();
             this.btn_Start = new System.Windows.Forms.Button();
             this.btn_1 = new System.Windows.Forms.Button();
             this.btn_2 = new System.Windows.Forms.Button();
@@ -59,8 +59,8 @@
             this.ptb_Pro = new System.Windows.Forms.PictureBox();
             this.ptb_Viewer = new System.Windows.Forms.PictureBox();
             this.ptb_5050 = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grb_Cauhoi.SuspendLayout();
+            this.grb_Moc.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Change)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Pro)).BeginInit();
@@ -68,19 +68,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.ptb_5050)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // grb_Cauhoi
             // 
-            this.groupBox1.Controls.Add(this.btn_D);
-            this.groupBox1.Controls.Add(this.btn_C);
-            this.groupBox1.Controls.Add(this.btn_B);
-            this.groupBox1.Controls.Add(this.btn_A);
-            this.groupBox1.Controls.Add(this.tbt_Question);
-            this.groupBox1.Location = new System.Drawing.Point(12, 315);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(743, 365);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Câu hỏi - và các đáp án";
+            this.grb_Cauhoi.Controls.Add(this.btn_D);
+            this.grb_Cauhoi.Controls.Add(this.btn_C);
+            this.grb_Cauhoi.Controls.Add(this.btn_B);
+            this.grb_Cauhoi.Controls.Add(this.btn_A);
+            this.grb_Cauhoi.Controls.Add(this.tbt_Question);
+            this.grb_Cauhoi.Location = new System.Drawing.Point(12, 315);
+            this.grb_Cauhoi.Name = "grb_Cauhoi";
+            this.grb_Cauhoi.Size = new System.Drawing.Size(743, 365);
+            this.grb_Cauhoi.TabIndex = 0;
+            this.grb_Cauhoi.TabStop = false;
+            this.grb_Cauhoi.Text = "Câu hỏi - và các đáp án";
             // 
             // btn_D
             // 
@@ -143,31 +143,31 @@
             this.tbt_Question.Size = new System.Drawing.Size(704, 102);
             this.tbt_Question.TabIndex = 0;
             // 
-            // groupBox2
+            // grb_Moc
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.groupBox2.Controls.Add(this.btn_Start);
-            this.groupBox2.Controls.Add(this.btn_1);
-            this.groupBox2.Controls.Add(this.btn_2);
-            this.groupBox2.Controls.Add(this.btn_3);
-            this.groupBox2.Controls.Add(this.btn_4);
-            this.groupBox2.Controls.Add(this.btn_5);
-            this.groupBox2.Controls.Add(this.bthn_6);
-            this.groupBox2.Controls.Add(this.btn_7);
-            this.groupBox2.Controls.Add(this.btn_8);
-            this.groupBox2.Controls.Add(this.btn_9);
-            this.groupBox2.Controls.Add(this.btn_10);
-            this.groupBox2.Controls.Add(this.btn_11);
-            this.groupBox2.Controls.Add(this.btn_12);
-            this.groupBox2.Controls.Add(this.btn_13);
-            this.groupBox2.Controls.Add(this.btn_14);
-            this.groupBox2.Controls.Add(this.btn_15);
-            this.groupBox2.Location = new System.Drawing.Point(771, 14);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(329, 666);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Danh sách 15 câu hỏi và các mức thưởng";
+            this.grb_Moc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.grb_Moc.Controls.Add(this.btn_Start);
+            this.grb_Moc.Controls.Add(this.btn_1);
+            this.grb_Moc.Controls.Add(this.btn_2);
+            this.grb_Moc.Controls.Add(this.btn_3);
+            this.grb_Moc.Controls.Add(this.btn_4);
+            this.grb_Moc.Controls.Add(this.btn_5);
+            this.grb_Moc.Controls.Add(this.bthn_6);
+            this.grb_Moc.Controls.Add(this.btn_7);
+            this.grb_Moc.Controls.Add(this.btn_8);
+            this.grb_Moc.Controls.Add(this.btn_9);
+            this.grb_Moc.Controls.Add(this.btn_10);
+            this.grb_Moc.Controls.Add(this.btn_11);
+            this.grb_Moc.Controls.Add(this.btn_12);
+            this.grb_Moc.Controls.Add(this.btn_13);
+            this.grb_Moc.Controls.Add(this.btn_14);
+            this.grb_Moc.Controls.Add(this.btn_15);
+            this.grb_Moc.Location = new System.Drawing.Point(771, 14);
+            this.grb_Moc.Name = "grb_Moc";
+            this.grb_Moc.Size = new System.Drawing.Size(329, 666);
+            this.grb_Moc.TabIndex = 1;
+            this.grb_Moc.TabStop = false;
+            this.grb_Moc.Text = "Danh sách 15 câu hỏi và các mức thưởng";
             // 
             // btn_Start
             // 
@@ -430,13 +430,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 692);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grb_Moc);
+            this.Controls.Add(this.grb_Cauhoi);
             this.Name = "GameForm";
             this.Text = "GameForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
+            this.grb_Cauhoi.ResumeLayout(false);
+            this.grb_Cauhoi.PerformLayout();
+            this.grb_Moc.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_Change)).EndInit();
@@ -449,9 +449,9 @@
 
         #endregion
 
-        private GroupBox groupBox1;
+        private GroupBox grb_Cauhoi;
         private TextBox tbt_Question;
-        private GroupBox groupBox2;
+        private GroupBox grb_Moc;
         private GroupBox groupBox3;
         private Button btn_D;
         private Button btn_C;
