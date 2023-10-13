@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
             this.grb_Cauhoi = new System.Windows.Forms.GroupBox();
             this.btn_D = new System.Windows.Forms.Button();
@@ -59,6 +60,7 @@
             this.ptb_Pro = new System.Windows.Forms.PictureBox();
             this.ptb_Viewer = new System.Windows.Forms.PictureBox();
             this.ptb_5050 = new System.Windows.Forms.PictureBox();
+            this.time_Limit = new System.Windows.Forms.Timer(this.components);
             this.grb_Cauhoi.SuspendLayout();
             this.grb_Moc.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -424,6 +426,10 @@
             this.ptb_5050.TabStop = false;
             this.ptb_5050.Click += new System.EventHandler(this.ptb_5050_Click);
             // 
+            // time_Limit
+            // 
+            this.time_Limit.Tick += new System.EventHandler(this.time_Limit_Tick);
+            // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -479,5 +485,6 @@
         private PictureBox ptb_Viewer;
         private PictureBox ptb_5050;
         private Button btn_Start;
+        private System.Windows.Forms.Timer time_Limit;
     }
 }
