@@ -24,11 +24,36 @@ namespace Game_AiLaTrieuPhu.PRL
         int[] questionMoney = new int[15] { 1000000, 2000000, 3000000, 5000000, 10000000, 15000000, 23000000, 40000000,
             60000000, 100000000, 150000000, 250000000, 400000000, 600000000, 999999999 };
         int selectedIndex = 0;
+
+        // Tạo 1 List để add hết các button vào 
+        List<Button> buttonList = new List<Button>();
         public GameForm()
         {
             InitializeComponent();
+ 
+            lb_Money.BackColor= Color.FromArgb(0,0,0,0); // Background trong suốt
+            lb_Time.BackColor = Color.FromArgb(0, 0, 0, 0);
+            ptb_5050.BackColor = Color.FromArgb(0, 0, 0, 0);
+            ptb_Pro.BackColor = Color.FromArgb(0, 0, 0, 0);
+            //tbt_Question.ForeColor = Color.White;
+            foreach (var item in grb_Moc.Controls)
+            { 
+                Button xx = (Button)item;
+                if(item is Button && item != btn_Start)
+                {
+                    buttonList.Add(item as Button);
+                }
+            }
         }
-
+        public void LightButton()
+        {
+            foreach (Button item in buttonList)
+            {
+                item.BackColor = Color.DodgerBlue;
+            }
+            buttonList[selectedIndex].BackColor = Color.Orange;
+            
+        }
 
         public void RandomQuestionShow()
         {
@@ -61,12 +86,13 @@ namespace Game_AiLaTrieuPhu.PRL
                 // Update tiền thắng
                 lb_Money.Text = questionMoney[selectedIndex].ToString();
                 selectedIndex++; // Update vị trí phần thưởng ứng với câu hỏi
-                // Nếu vị trí câu hỏi từ 6 đên 10 thì lv 2 (selectedIndex (5-9)
-                // Nếu vị trí câu hỏi từ 11 - 15 thì là lv 3 (selectedIndex (10-14)
+                // Nếu vị trí câu hỏi là 6 thì update lên LV2 kèm theo clear list cũ vì đó là câu hỏi lv1
+                // Nếu vị trí câu hỏi là 11 thì update lên lv3 kèm theo clear list cũ vì đó là câu hỏi lv2
                 if (selectedIndex == 10) { level = 3; selectedQuestions.Clear(); }
                 else if (selectedIndex == 5) { level = 2; selectedQuestions.Clear(); }
                 // Sau khi update level thì randomQuestion sẽ theo lv đó
                 RandomQuestionShow(); // Khi đúng thì ta load thêm câu hỏi mới
+                LightButton();
             }
             else
             {
@@ -131,7 +157,10 @@ namespace Game_AiLaTrieuPhu.PRL
             // Cách 1 => Disable pictureBox này - thuộc tính Enable chỉ khả năng thao tác vói control
             //ptb_5050.Enabled = false;
             // Cách 2 là ẩn nó luôn đi - thuộc tính Visible là thuộc tính chỉ về khả năng hiện thị của 1 control
-            ptb_5050.Visible = false;
+            // ptb_5050.Visible = false;
+            // Cách 3 là thay nó bằng hình khác rồi disable
+            ptb_5050.Image = Image.FromFile(@"C:\Users\Acer\Desktop\DHBC\50done.png");
+            ptb_5050.Enabled = false;
         }
 
         private void ptb_Viewer_Click(object sender, EventArgs e) //Khán giả
@@ -158,7 +187,8 @@ namespace Game_AiLaTrieuPhu.PRL
         {
             string trueAnswer = services.GetTrueAnswer(selectedID);
             MessageBox.Show("Chuyên gia khuyên bạn nên chọn đáp án: " + trueAnswer);
-            ptb_Pro.Visible = false;
+            ptb_Pro.Image = Image.FromFile(@"C:\Users\Acer\Desktop\DHBC\4.png");
+            ptb_Pro.Enabled = false;
         }
 
         private void ptb_Change_Click(object sender, EventArgs e) // Nút skip câu hỏi
@@ -180,7 +210,7 @@ namespace Game_AiLaTrieuPhu.PRL
         private void btn_Start_Click(object sender, EventArgs e)
         {
             time_Limit.Start(); // Kích hoạt timer
-            btn_1.BackColor = Color.LightBlue; // Đổi màu cột mốc đầu tiên
+            btn_1.BackColor = Color.Orange; // Đổi màu cột mốc đầu tiên
             btn_Start.Enabled = false; // Disable nút này để tránh người ta nhấn nhiều lần
             RandomQuestionShow();
         }
