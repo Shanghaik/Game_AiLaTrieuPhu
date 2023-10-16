@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,16 +31,21 @@ namespace Game_AiLaTrieuPhu.PRL
         public GameForm()
         {
             InitializeComponent();
- 
-            lb_Money.BackColor= Color.FromArgb(0,0,0,0); // Background trong suốt
+            SoundPlayer play = new SoundPlayer(@"C:\Users\Acer\Desktop\DHBC\Nhac\ALTP.wav");
+            play.Play();
+            lb_Money.BackColor = Color.FromArgb(0, 0, 0, 0); // Background trong suốt
             lb_Time.BackColor = Color.FromArgb(0, 0, 0, 0);
             ptb_5050.BackColor = Color.FromArgb(0, 0, 0, 0);
             ptb_Pro.BackColor = Color.FromArgb(0, 0, 0, 0);
-            //tbt_Question.ForeColor = Color.White;
+            ptb_Viewer.BackColor = Color.FromArgb(0, 0, 0, 0);
+            ptb_Change.BackColor = Color.FromArgb(0, 0, 0, 0);
+            grp_TG.BackColor = Color.FromArgb(0, 0, 0, 0);
+            lbt.BackColor = Color.FromArgb(0, 0, 0, 0);
+            lbtt.BackColor = Color.FromArgb(0, 0, 0, 0);
             foreach (var item in grb_Moc.Controls)
-            { 
+            {
                 Button xx = (Button)item;
-                if(item is Button && item != btn_Start)
+                if (item is Button && item != btn_Start)
                 {
                     buttonList.Add(item as Button);
                 }
@@ -52,25 +58,25 @@ namespace Game_AiLaTrieuPhu.PRL
                 item.BackColor = Color.DodgerBlue;
             }
             buttonList[selectedIndex].BackColor = Color.Orange;
-            
+
         }
 
         public void RandomQuestionShow()
         {
             lb_Time.Text = "30";
             timeLimit = 30;
-            
+
             while (selectedQuestions.Count < services.CountQuestionLevel(level)) // Kiểm tra số lượng câu hỏi theo lv nó nhỏ hơn cái lv đ
             {
                 var question = services.RandomQuestion(level);
                 // Nếu câu hỏi random được chọn có id không nằm trong danh sách đã dc chọn
                 if (!selectedQuestions.Contains(question.Id))
                 {
-                    tbt_Question.Text = $"Câu  hỏi số {(selectedIndex + 1)}: "+  question.QuestionText; // Hiển thị là câu hỏi số mấy
-                    btn_A.Text = question.AnswerA;
-                    btn_B.Text = question.AnswerB;
-                    btn_C.Text = question.AnswerC;
-                    btn_D.Text = question.AnswerD;
+                    tbt_Question.Text = $"Câu hỏi số {(selectedIndex + 1)}: " + question.QuestionText; // Hiển thị là câu hỏi số mấy
+                    btn_A.Text = "A. " + question.AnswerA;
+                    btn_B.Text = "B. " + question.AnswerB;
+                    btn_C.Text = "C. " + question.AnswerC;
+                    btn_D.Text = "D. " + question.AnswerD;
                     selectedQuestions.Add(question.Id);
                     selectedID = question.Id; // Gán id câu hỏi cho biến lưu
                     break;
@@ -82,7 +88,9 @@ namespace Game_AiLaTrieuPhu.PRL
         {
             if (services.CheckTrueAnswer(selectedID, answer))
             {
-                MessageBox.Show("Đúng");
+                SoundPlayer play = new SoundPlayer(@"C:\Users\Acer\Desktop\DHBC\Nhac\true.wav");
+                play.Play();
+                // MessageBox.Show("Đúng");
                 // Update tiền thắng
                 lb_Money.Text = questionMoney[selectedIndex].ToString();
                 selectedIndex++; // Update vị trí phần thưởng ứng với câu hỏi
@@ -127,6 +135,8 @@ namespace Game_AiLaTrieuPhu.PRL
 
         private void ptb_5050_Click(object sender, EventArgs e)
         {
+            SoundPlayer play = new SoundPlayer(@"C:\Users\Acer\Desktop\DHBC\Nhac\5050.wav");
+            play.Play();
             string trueAnswer = services.GetTrueAnswer(selectedID);
             Random r = new Random();
             int hold = r.Next(1, 3);
@@ -174,19 +184,22 @@ namespace Game_AiLaTrieuPhu.PRL
             int r2 = r.Next(0, 30);
             int r3 = r.Next(0, 30);
             int rTrue = 100 - r1 - r2 - r3;
-            string show;
-            if (trueAnswer == "A") show = $"A: {rTrue}\nB: {r1}\nC: {r2}\nD:{r3}";
-            else if (trueAnswer == "B") show = $"A: {r1}\nB: {rTrue}\nC: {r2}\nD:{r3}";
-            else if (trueAnswer == "C") show = $"A: {r1}\nB: {r2}\nC: {rTrue}\nD:{r3}";
-            else show = $"A: {r1}\nB: {r2}\nC: {r3}\nD:{rTrue}";
-            MessageBox.Show(show);
-            ptb_Viewer.Visible = false;
+            int[] arr = new int[4];
+            if (trueAnswer == "A") arr = new int[] { rTrue, r1, r2, r3 };
+            else if (trueAnswer == "B") arr = new int[] { r1, rTrue, r2, r3 };
+            else if (trueAnswer == "C") arr = new int[] { r1, r2, rTrue, r3 };
+            else arr = new int[] { r1, r2, r3, rTrue };
+            ptb_Viewer.Image = Image.FromFile(@"C:\Users\Acer\Desktop\DHBC\Khangiadone.png");
+            ptb_Viewer.Enabled = false;
+            ViewerForm viewerForm= new ViewerForm(arr);
+            viewerForm.ShowDialog();
         }
 
         private void ptb_Pro_Click(object sender, EventArgs e)
         {
             string trueAnswer = services.GetTrueAnswer(selectedID);
-            MessageBox.Show("Chuyên gia khuyên bạn nên chọn đáp án: " + trueAnswer);
+            ProForm proForm = new ProForm(trueAnswer);
+            proForm.ShowDialog();
             ptb_Pro.Image = Image.FromFile(@"C:\Users\Acer\Desktop\DHBC\4.png");
             ptb_Pro.Enabled = false;
         }
@@ -205,7 +218,8 @@ namespace Game_AiLaTrieuPhu.PRL
 
             // TH2: Chỉ thay đổi câu hỏi thôi
             RandomQuestionShow();
-            ptb_Change.Visible = false;
+            ptb_Change.Image = Image.FromFile(@"C:\Users\Acer\Desktop\DHBC\Skipdone.png");
+            ptb_Change.Enabled = false;
         }
         private void btn_Start_Click(object sender, EventArgs e)
         {
@@ -230,6 +244,21 @@ namespace Game_AiLaTrieuPhu.PRL
                     $"bạn ra về với {lb_Money.Text} đồng");
 
             }
+        }
+
+        private void lb_Money_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbt_Question_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
